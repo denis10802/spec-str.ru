@@ -1302,7 +1302,7 @@ img {
 
 .footer-form {
   text-align: center;
-  width: 30%;
+  width: 33%;
   margin-right: 100px;
   margin-top: 30px;
   -webkit-box-align: center;
@@ -1811,6 +1811,12 @@ img {
   .footer-form__input {
     width: 80%;
   }
+  .thanks {
+    margin: 10px;
+  }
+
+
+
 }
 
 .webp body { background-image: url(../img/body/body-bg.webp); }
@@ -1822,3 +1828,59 @@ img {
 .webp .footer-form__name { background-image: url(../img/footer/input_name.webp); }
 
 .webp .footer-form__phone { background-image: url(../img/footer/input_phone.webp); }
+
+
+.popup {
+  position: fixed;
+  display: none; /* Скрываем блок до отправки формы */
+  justify-content: center; /* Горизонтальное выравнивание элементов внутри блока */
+  align-items: center; /* Вертикальное выравнивание элементов внутри блока */
+  width: 100%; /* Ширина блока 100% от ширины родительского блока */
+  height: 100%; /* Высота блока 100% от высоты родительского блока */
+  top: 0; /* Прижимаем блок к верхнему краю родительского блока */
+  opacity: 0; /* Делаем блок невидимым */
+}
+
+.popup.active {
+  display: flex;
+  opacity: 1;
+  transition: opacity 1s;
+  z-index: 9;
+}
+
+.thanks {
+  position: relative; /* Устанавливает родительскую позицию */
+  text-align: center; /* Выравнивание текста по центру */
+  width: 440px; /* Ширина блока 440px */
+  max-width: 100%; /* Максимальная ширина блока не может быть более 100% */
+  border: 1px solid #00000038; /* Рамка вокруг блока */
+  border-radius: 10px; /* Закругление блока на 4px */
+  background-color: #ffffffeb; /* Цвет фона */
+  padding: 10px 10px;
+}
+.popup__title{
+  font-size: 18px;
+  font-family: 'Gotham Pro Bold', sans-serif;
+  font-weight: 700;
+}
+.popup__subtitle {
+   font-family: 'Gotham Pro Light', sans-serif;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 4%;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute; /* Устанавливает абсолютную позицию */
+  top: 0; /* Прижимаем блок к верхнему краю родительского блока */
+  width: 100%; /* Ширина блока 100% от ширины родительского блока */
+  height: 100%; /* Высота блока 100% от высоты родительского блока */
+  background-color: #000; /* Устанавливает цвет фона */
+  z-index: -1; /* Определяем порядок расположения блоков */
+  opacity: 0.8; /* Прозрачность 0.3 из 1 */
+}
